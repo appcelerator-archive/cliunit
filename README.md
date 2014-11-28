@@ -71,6 +71,8 @@ IN:? password:
 OUT:<%=password%>
 ```
 
+For a good set of examples, CLIUnit itself is unit tested with itself (recursive?).  Check out the [`test`](https://github.com/appcelerator/cliunit/tree/master/test) directory in this project for various examples.
+
 ## Using the API
 
 Instead of using the CLIUnit cli, you could use the API.
@@ -99,7 +101,7 @@ unit.on('stderr',function(buf){
 unit.run();
 ```
 
-See the `lib/cliunit.js` file for information on the APIs supported or JS versions of the tests for this program under `tests`.
+See the `lib/cliunit.js` file for information on the APIs supported or JS versions of the tests for this program under [`tests`](https://github.com/appcelerator/cliunit/tree/master/test).
 
 
 ## Contributing
