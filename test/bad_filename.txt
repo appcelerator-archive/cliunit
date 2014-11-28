@@ -1,0 +1,8 @@
+#
+# Script for testing bad filename input
+#
+DESC: should print out correct error on bad filename
+CMD:../bin/cliunit
+ARG:fppbar
+ERROR:/Couldn't find script:\s(.*)\/fppbar$/
+EXIT:1

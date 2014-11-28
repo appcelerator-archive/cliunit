@@ -1,0 +1,14 @@
+#
+# Script for testing the help
+#
+DESC:should be able to print help with --help
+CMD:../bin/cliunit
+ARG:--help
+IN:  Usage: cliunit [options]
+IN:  Options:
+IN:    -h, --help           output usage information
+IN:    -V, --version        output the version number
+IN:    --debug              print debug output
+IN:    --config <config>    pass configuration into script as key=value
+IN:    --timeout <timeout>  timeout in ms before test should be aborted
+EXIT:0

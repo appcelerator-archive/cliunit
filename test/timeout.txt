@@ -1,0 +1,14 @@
+#
+# Script for testing version
+#
+DESC: should handle timeout
+CMD:../bin/cliunit
+ARG:--timeout
+ARG:1
+ARG:./fixtures/test.txt
+IN:/✘\s+test\/fixtures\/test\.txt\s+\(\dms\)/
+IN:Test Failure:
+IN:test/fixtures/test.txt
+IN:/timed out after \d ms/
+IN:/0 tests succeeded, 1 test failed/
+EXIT:1

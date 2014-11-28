@@ -1,0 +1,5 @@
+#
+# Script for testing good script
+#
+CMD:../../bin/cliunit
+EXIT:0

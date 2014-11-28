@@ -1,0 +1,8 @@
+#
+# Script for testing config
+#
+DESC: should echo output from config
+CMD:echo
+ARG:<%=a%>
+IN:b
+EXIT:0

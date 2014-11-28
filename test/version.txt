@@ -1,0 +1,8 @@
+#
+# Script for testing version
+#
+DESC: should print out current version
+CMD:../bin/cliunit
+ARG:--version
+IN:/\d\.\d\.\d/
+EXIT:0

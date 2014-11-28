@@ -1,0 +1,12 @@
+#
+# Script for testing script loading from directories
+#
+DESC:should be able to execute scripts in directory
+CMD:../bin/cliunit
+ARG:./fixtures
+ARG:--no-banner
+IN:/✔\s+test\/fixtures\/test\.txt\s+\(\dms\)/
+IN:/✔\s+test\/fixtures\/test2\.txt\s+\(\dms\)/
+IN:/✔\s+test\/fixtures\/test3\.txt\s+\(\dms\)/
+IN:3 tests succeeded!
+EXIT:0

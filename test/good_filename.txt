@@ -1,0 +1,7 @@
+#
+# Script for testing good filename input
+#
+DESC: should be OK with a good script filename
+CMD:../bin/cliunit
+ARG:./fixtures/test.txt
+EXIT:0

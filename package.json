@@ -1,0 +1,39 @@
+{
+  "name": "cliunit",
+  "version": "1.0.0",
+  "description": "CLI Unit Testing",
+  "main": "index.js",
+  "scripts": {
+    "test": "grunt"
+  },
+  "keywords": [
+    "cli",
+    "unittest",
+    "test"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/appcelerator/cliunit.git"
+  },
+  "author": "Jeff Haynie",
+  "license": "Apache2",
+  "dependencies": {
+    "async": "^0.9.0",
+    "chalk": "^0.5.1",
+    "commander": "^2.5.0",
+    "ejs": "^1.0.0",
+    "fs-extra": "^0.12.0",
+    "lodash": "^2.4.1",
+    "mocha": "^2.0.1",
+    "should": "^4.3.0",
+    "stripcc": "^1.0.0",
+    "which": "^1.0.7"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-env": "^0.4.2",
+    "grunt-mocha-test": "^0.12.4"
+  }
+}

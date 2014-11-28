@@ -1,0 +1,62 @@
+#!/usr/bin/env node
+
+var program = require('commander'),
+	pkg = require('../package.json'),
+	fs = require('fs'),
+	path = require('path'),
+	CLIUnit = require('../'),
+	chalk = require('chalk');
+
+program
+  .version(pkg.version)
+  .option('--debug', 'print debug output')
+  .option('--config <config>','pass configuration into script as key=value')
+  .option('--timeout <timeout>','timeout in ms before test should be aborted')
+  .option('--colors <colors>','explicitly control colors')
+  .parse(process.argv);
+
+if (program.args.length) {
+	var files = [],
+		opts = {},
+		config = {};
+	program.args.forEach(function(arg){
+		var fn = path.resolve(arg);
+		if (!fs.existsSync(fn)) {
+			console.error("Couldn't find script: ",fn);
+			process.exit(1);
+		}
+		else if (fs.statSync(fn).isDirectory()) {
+			fs.readdirSync(fn).filter(function(f){
+				return path.extname(f)==='.txt';
+			}).forEach(function(f){
+				files.push(path.join(fn, f));
+			});
+		}
+		else {
+			files.push(fn);
+		}
+	});
+	if (program.config) {
+		program.config.split(',').forEach(function(l){
+			var t = l.split('=');
+			opts[t[0].trim()] = t[1].trim();
+		});
+	}
+	if (program.debug) {
+		config.debug = program.debug;
+	}
+	if (program.timeout) {
+		config.timeout = program.timeout;
+	}
+	if (program.colors) {
+		chalk.enabled = program.colors;
+	}
+	CLIUnit.runScripts(config, opts, files, function(err, results){
+		if (err) { console.error(err.message || err); process.exit(1); }
+		results.printResults(config, true);
+	})
+}
+else {
+	program.help();
+}
+

@@ -1,0 +1,9 @@
+#
+# Script for testing debug output
+#
+DESC: should print out current version with debug
+CMD:../bin/cliunit
+ARG:--debug
+ARG:./version.txt
+IN:/^STDOUT: \d\.\d\.\d$/
+EXIT:0
