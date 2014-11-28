@@ -37,6 +37,7 @@ The basic format is `COMMAND:ARGUMENT`.  Beginning and trailing space is preserv
 
 The following are basic commands:
 
+- `DESC`: (optional) the test description, used in the results output
 - `CMD`: (required) the path to the CLI binary (or if on your global $PATH, just the name)
 - `ARG`: (optional) an argument to pass to CLI. can specific zero or more of these on separate lines.
 - `EXIT`: (optional) exit code when the CLI exits
