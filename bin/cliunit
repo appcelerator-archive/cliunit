@@ -48,8 +48,8 @@ if (program.args.length) {
 	if (program.timeout) {
 		config.timeout = program.timeout;
 	}
-	if (program.colors) {
-		chalk.enabled = program.colors;
+	if (program.colors!==undefined) {
+		chalk.enabled = /(true|1|on|enabled|yes)/i.test(program.colors);
 	}
 	CLIUnit.runScripts(config, opts, files, function(err, results){
 		if (err) { console.error(err.message || err); process.exit(1); }

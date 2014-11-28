@@ -22,4 +22,23 @@ describe("colors", function(){
 		});
 		unit.run();
 	});
+	it("should print out version without colors", function(done){
+		var unit = new CLIUnit(__filename);
+		unit.setBinary(path.join(__dirname,'../bin/cliunit'));
+		unit.setArguments(['--debug', '--colors', 'false', path.join(__dirname,'version.txt')]);
+		unit.addExpect('STDOUT: '+pkg.version);
+		unit.addExpect(/\✔\s+test\/version\.txt\s+\s\(\dms\)\sshould print out current version/);
+
+		function error(err) {
+			done && done(err);
+			done = null;
+		}
+		unit.on('timeout',error);
+		unit.on('error',error);
+		unit.on('finished', function(err,results){
+			if (err) { return error(err); }
+			error();
+		});
+		unit.run();
+	});
 });

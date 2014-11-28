@@ -3,10 +3,10 @@
 #
 DESC: should print out version using colors
 CMD:../bin/cliunit
+ARG:./version.txt
 ARG:--debug
 ARG:--colors
 ARG:true
-ARG:./version.txt
 IN:/^STDOUT: \d\.\d\.\d$/
 IN:/\[32m✔\s+\[39m\[33mtest\/version\.txt\s+\[39m\[90m\s\(\dms\)\[39m\s+should print out current version/
 IN:[32m1[39m [32mtest succeeded[39m[32m![39m

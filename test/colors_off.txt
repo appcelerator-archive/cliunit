@@ -1,0 +1,13 @@
+#
+# Script for testing debug output
+#
+DESC: should print out version without colors
+CMD:../bin/cliunit
+ARG:./version.txt
+ARG:--debug
+ARG:--colors
+ARG:false
+IN:/^STDOUT: \d\.\d\.\d$/
+IN:/✔\s+test\/version\.txt\s+\(\dms\)\s+should print out current version/
+IN:1 test succeeded!
+EXIT:0

@@ -1,8 +1,12 @@
 {
   "name": "cliunit",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "CLI Unit Testing",
   "main": "index.js",
+  "preferGlobal": true,
+  "bin": {
+    "cliunit": "./bin/cliunit"
+  },
   "scripts": {
     "test": "grunt"
   },
