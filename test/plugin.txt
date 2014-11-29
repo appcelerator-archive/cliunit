@@ -1,0 +1,11 @@
+#
+# Script for testing plugins
+#
+DESC: should test loading plugins
+CMD:../bin/cliunit
+ARG:--debug
+ARG:./version.txt
+PLUGIN:./fixtures/plugins/goodplugin.js
+IN:/^STDOUT: \d\.\d\.\d$/
+GOOD:BOY
+EXIT:0

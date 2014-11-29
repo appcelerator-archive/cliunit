@@ -1,6 +1,6 @@
 {
   "name": "cliunit",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "CLI Unit Testing",
   "main": "index.js",
   "preferGlobal": true,

@@ -13,6 +13,7 @@ program
   .option('--config <config>','pass configuration into script as key=value')
   .option('--timeout <timeout>','timeout in ms before test should be aborted')
   .option('--colors <colors>','explicitly control colors')
+  .option('--plugin <path>','add path to plugin file or directory of plugins')
   .parse(process.argv);
 
 if (program.args.length) {
@@ -50,6 +51,9 @@ if (program.args.length) {
 	}
 	if (program.colors!==undefined) {
 		chalk.enabled = /(true|1|on|enabled|yes)/i.test(program.colors);
+	}
+	if (program.plugin) {
+		config.plugins = program.plugin;
 	}
 	CLIUnit.runScripts(config, opts, files, function(err, results){
 		if (err) { console.error(err.message || err); process.exit(1); }

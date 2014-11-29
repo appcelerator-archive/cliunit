@@ -1,0 +1,10 @@
+#
+# Script for testing exec
+#
+DESC: should test exec
+CMD:../bin/cliunit
+ARG:--debug
+ARG:./version.txt
+IN:/^STDOUT: \d\.\d\.\d$/
+EXEC:echo hello
+EXIT:0

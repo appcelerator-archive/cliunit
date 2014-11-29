@@ -44,6 +44,7 @@ The following are basic commands:
 - `ERROR`: (optional) error message (or content from stderr if non-zero exit code).  can be string (exact match) or (regular expression)
 - `IN`: (optional) input received from the CLI (stdout).  can be string (exact match) or regular expression
 - `OUT`: (optional) output to send the CLI (stdin). must be a string.
+- `EXEC`: (optional) execute a command.
 
 For commands that accept a regular expression you must specify a `/` at the beginning and `/` at the end of the input.  For example:
 
@@ -72,6 +73,35 @@ OUT:<%=password%>
 ```
 
 For a good set of examples, CLIUnit itself is unit tested with itself (recursive?).  Check out the [`test`](https://github.com/appcelerator/cliunit/tree/master/test) directory in this project for various examples.
+
+
+## Extending the Script
+
+You can extend the script using plugins.  The plugin is a simple JS file that exports two primary properties: `command` (the name of the command) and `execute` (the function that handles execution of the plugin).
+
+For example, a simple plugin:
+
+```javascript
+exports.command = 'FOO';
+exports.execute = function(state, token, callback) {
+    // do something and call callback when completed
+    callback();
+};
+```
+
+You can load it from within script:
+
+```text
+PLUGIN=./path/to/plugin.js
+# now you can use it
+FOO:bar
+```
+You can also load it from CLI as a plugin file or a directory of plugins:
+
+```bash
+cliunit --plugin ./path/to/plugin_or_dir script.txt
+```
+
 
 ## Using the API
 

@@ -1,0 +1,7 @@
+#
+# Script for testing plugins
+#
+DESC: should test loading plugins
+CMD:../../../bin/cliunit
+GOOD:BOY
+EXIT:0
