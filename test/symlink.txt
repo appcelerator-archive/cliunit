@@ -1,0 +1,11 @@
+#
+# Script for testing symlink
+#
+DESC: should test symlink
+
+SYMLINK:., ./symlink.txt, foobarfile.txt
+FILE:./foobarfile.txt
+RM:./foobarfile.txt
+FILE:!./foobarfile.txt
+
+EXIT:0
