@@ -1,0 +1,7 @@
+#
+# Script for testing echo output
+#
+DESC: should print out foo
+CMD:echo
+ECHO:foo
+EXIT:0

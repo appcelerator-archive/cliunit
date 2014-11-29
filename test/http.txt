@@ -1,0 +1,35 @@
+#
+# Script for testing HTTP
+#
+DESC: should test HTTP fetching
+
+# make an HTTP request to google with some options and custom headers
+HTTP:url=http://google.com, timeout=30000, header=X-UserAgent: CLIUnit
+HTTP_IN:/<\/html>/
+HTTP_IN:/window\.google/
+# check that it exists
+HTTP_HEADER: content-type
+# check for a regular expression value
+HTTP_HEADER: content-type=/text\/html/
+# check for exact match string
+HTTP_HEADER:x-frame-options=SAMEORIGIN
+
+# set a HTTP post body
+HTTP_OUT:foo=bar
+# perform a post with body
+HTTP:url=http://httpbin.org/post, method=POST
+HTTP_IN:/foo=bar/
+
+# set value from HTTP header
+HTTP_SET:foo=content-type
+
+# now pass this value dynamically and echo it back out and check it
+CMD:../bin/cliunit
+ARG:./fixtures/echo/out.txt
+ARG:--config
+ARG:foo=<%=foo%>
+ARG:--debug
+IN:STDOUT: application/json
+
+
+EXIT:0

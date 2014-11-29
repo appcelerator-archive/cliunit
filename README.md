@@ -35,16 +35,38 @@ Any `#` or blank space will be ignore in the test file.
 
 The basic format is `COMMAND:ARGUMENT`.  Beginning and trailing space is preserved so make sure you pay attention to your spacing.
 
-The following are basic commands:
+The following are the built-in commands that are supported:
 
-- `DESC`: (optional) the test description, used in the results output
-- `CMD`: (required) the path to the CLI binary (or if on your global $PATH, just the name)
-- `ARG`: (optional) an argument to pass to CLI. can specific zero or more of these on separate lines.
-- `EXIT`: (optional) exit code when the CLI exits
-- `ERROR`: (optional) error message (or content from stderr if non-zero exit code).  can be string (exact match) or (regular expression)
-- `IN`: (optional) input received from the CLI (stdout).  can be string (exact match) or regular expression
-- `OUT`: (optional) output to send the CLI (stdin). must be a string.
-- `EXEC`: (optional) execute a command.
+- `ARG`: an argument to pass to CLI. can specific zero or more of these on separate lines.
+- `CMD`: the path to the CLI binary (or if on your global $PATH, just the name)
+- `DIR`: check existence of directory (precede with `!` to negate check)
+- `DESC`: the test description, used in the results output
+- `ECHO`: print to console a value
+- `ERROR`: error message (or content from stderr if non-zero exit code).  can be string (exact match) or (regular expression)
+- `EXEC`: execute a command.
+- `EXIT`: exit code when the CLI exits
+- `FILE`: check existence of file (precede with `!` to negate check)
+- `FILE_SET`: set the value of a variable from contents of file
+- `HTTP`: execute a HTTP request
+- `HTTP_IN`: read body of previously fetched HTTP request
+- `HTTP_OUT`: set body for a subsequent HTTP request
+- `HTTP_HEADER`: read header from previously fetched HTTP request
+- `HTTP_SET`: set a variable from HTTP header or body
+- `IN`: input received from the CLI (stdout).  can be string (exact match) or regular expression
+- `IN_SKIP`: skip to output that matches exact string or regular expression
+- `MKDIR`: ensure directory is created and exists
+- `OUT`: output to send the CLI (stdin). must be a string.
+- `PLUGIN`: define a new plugin or plugin directory
+- `RM`: delete file or directory
+- `SET`: set a variable value
+- `SLEEP`: sleep for milliseconds specified
+- `SPAWN`: run without waiting another command
+- `SPAWN_IN`: map spawn stdout to test `IN`
+- `SPAWN_CWD`: set the working directory of `SPAWN`
+- `SPAWN_KILL`: kill a running spawn process
+- `SPAWN_WAIT`: wait for running spawn process to exit before continuing
+- `TOUCH`: ensure that a file exists
+
 
 For commands that accept a regular expression you must specify a `/` at the beginning and `/` at the end of the input.  For example:
 

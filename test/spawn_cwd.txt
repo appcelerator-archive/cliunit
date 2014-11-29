@@ -1,0 +1,15 @@
+#
+# Script for testing spawn cwd
+#
+DESC: should test spawn current working dir
+# switch to this directory
+SPAWN_CWD:./fixtures/spawn
+# run script that should be in this directory
+SPAWN:node, spawn.js
+# wire up spawn input to out IN
+SPAWN_IN:
+# wait for spawn to exit
+SPAWN_WAIT:
+# check input from spawn
+IN:spawn
+EXIT:0

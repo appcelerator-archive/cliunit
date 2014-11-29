@@ -1,0 +1,10 @@
+#
+# Script for testing echo
+#
+DESC: should test printing out to console with multiline
+CMD:../bin/cliunit
+ARG:./fixtures/echo/multiline.txt
+# should come in as newline and then a tab
+IN:foo
+IN:\tbar
+EXIT:0

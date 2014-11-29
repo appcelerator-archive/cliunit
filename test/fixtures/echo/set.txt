@@ -1,0 +1,6 @@
+#
+# Script for testing set
+#
+SET:foo=bar
+ECHO:<%=foo%>
+EXIT:0

@@ -1,0 +1,7 @@
+#
+# Script for testing echo output
+#
+DESC: should print out foo variable
+CMD:echo
+ARG:<%=foo%>
+EXIT:0

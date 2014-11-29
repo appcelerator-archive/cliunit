@@ -1,0 +1,8 @@
+#
+# Script for testing echo
+#
+DESC: should test printing out to console
+CMD:../bin/cliunit
+ARG:./fixtures/echo/echo.txt
+IN:foo
+EXIT:0

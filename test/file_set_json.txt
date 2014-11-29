@@ -1,0 +1,18 @@
+#
+# Script for testing file set
+#
+DESC: should be able to set values from file as JSON object
+
+# pull out entire JSON object and set as `key`
+FILE_SET:key=./fixtures/file/test.json
+
+# now pass this value dynamically and echo it back out and check it
+CMD:../bin/cliunit
+ARG:./fixtures/echo/out.txt
+ARG:--config
+ARG:foo=<%=key.foo%>
+ARG:--debug
+IN:STDOUT: bar
+
+
+EXIT:0

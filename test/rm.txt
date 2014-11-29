@@ -1,0 +1,19 @@
+#
+# Script for testing rm
+#
+DESC: should test rm
+
+# make a directory
+MKDIR:./foobardir
+# remove it
+RM:./foobardir
+# make sure it's done
+DIR:!./foobardir
+
+# make a file and then make sure to rm it
+TOUCH:./foobarfile.txt
+FILE:./foobarfile.txt
+RM:./foobarfile.txt
+FILE:!./foobarfile.txt
+
+EXIT:0

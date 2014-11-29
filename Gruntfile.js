@@ -28,10 +28,15 @@ module.exports = function(grunt) {
 		var spawn = require('child_process').spawn,
 			fs = require('fs'),
 			path = require('path'),
+			_ = require('lodash'),
 			bin = path.join(__dirname, 'bin', 'cliunit'),
 			dir = path.join(__dirname, 'test'),
-			child = spawn(bin, [dir,'--colors','true','--config','a=b']),
+			env = _.merge(process.env, {GRUNT:1}),
+			child = spawn(bin, [dir,'--colors','true','--config','a=b'], {env:env}),
 			done = this.async();
+
+		grunt.log.ok('running '+bin+' ...');
+		grunt.log.writeln('');
 
 		child.stdout.on('data',grunt.log.write);
 		child.stderr.on('data',grunt.log.error);

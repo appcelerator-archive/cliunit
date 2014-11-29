@@ -1,0 +1,9 @@
+#
+# Script for testing spawn
+#
+DESC: should test spawn
+SPAWN:echo, bar
+SPAWN_IN:
+SPAWN_WAIT: 
+IN:bar
+EXIT:0

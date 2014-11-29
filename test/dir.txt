@@ -1,0 +1,10 @@
+#
+# Script for testing if directory exists
+#
+DESC: should directory exist
+CMD:echo
+# make sure it exists
+DIR:./fixtures
+# make sure it doesn't exist
+DIR:!./fixturesfoooadsn
+EXIT:0

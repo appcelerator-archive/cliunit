@@ -1,0 +1,13 @@
+#
+# Script for testing mkdir
+#
+DESC: should test mkdir
+MKDIR:./foobardir
+DIR:./foobardir
+# check for and then delete 
+CMD:node
+ARG:./fixtures/dir/rmdir.js
+ARG:./foobardir
+# make sure it's gone
+DIR:!./foobardir
+EXIT:0

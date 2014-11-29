@@ -1,0 +1,12 @@
+#
+# Script for testing touch
+#
+DESC: should test touch
+
+# make a file and then make sure to rm it
+TOUCH:./foobarfile.txt
+FILE:./foobarfile.txt
+RM:./foobarfile.txt
+FILE:!./foobarfile.txt
+
+EXIT:0

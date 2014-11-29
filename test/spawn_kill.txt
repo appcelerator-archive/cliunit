@@ -1,0 +1,8 @@
+#
+# Script for testing spawn kill
+#
+DESC: should test spawn kill
+SPAWN:/usr/bin/curl,-is,http://www.google.com
+SLEEP:450
+SPAWN_KILL:
+EXIT:0

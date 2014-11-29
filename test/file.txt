@@ -1,0 +1,10 @@
+#
+# Script for testing if file exists
+#
+DESC: should file exist
+CMD:echo
+# make sure it exists
+FILE:./file.txt
+# make sure it doesn't exist
+FILE:!./fileboooo.txt
+EXIT:0

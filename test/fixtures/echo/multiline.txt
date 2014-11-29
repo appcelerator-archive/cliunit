@@ -1,0 +1,8 @@
+#
+# Script for testing echo output
+#
+DESC: should print out foo
+CMD:echo
+ECHO:foo\n\
+\tbar
+EXIT:0

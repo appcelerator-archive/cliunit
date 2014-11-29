@@ -1,0 +1,8 @@
+#
+# Script for testing set
+#
+DESC: should test set
+CMD:../bin/cliunit
+ARG:./fixtures/echo/set.txt
+IN:bar
+EXIT:0
