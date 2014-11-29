@@ -65,6 +65,7 @@ The following are the built-in commands that are supported:
 - `SPAWN_CWD`: set the working directory of `SPAWN`
 - `SPAWN_KILL`: kill a running spawn process
 - `SPAWN_WAIT`: wait for running spawn process to exit before continuing
+- `SYMLINK`: make a symlink. arguments are current working directory, link file/directory and optional name
 - `TOUCH`: ensure that a file exists
 
 
