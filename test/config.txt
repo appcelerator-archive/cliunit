@@ -5,4 +5,5 @@ DESC: should echo output from config
 CMD:echo
 ARG:<%=a%>
 IN:b
+RUN:
 EXIT:0

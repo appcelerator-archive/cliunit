@@ -8,6 +8,7 @@ ARG:--debug
 ARG:--colors
 ARG:false
 IN:/^STDOUT: \d\.\d\.\d$/
-IN:/✔\s+test\/version\.txt\s+\(\dms\)\s+should print out current version/
+IN:/✔\s+test\/version\.txt\s+\(\d+ms\)\s+should print out current version/
 IN:1 test succeeded!
+RUN:
 EXIT:0

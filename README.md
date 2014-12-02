@@ -25,6 +25,8 @@ Or you could run all tests from the `test` directory:
 $ cliunit ./test
 ```
 
+Any file ending in `.txt` will be loaded. The one exception is that cliunit will skip any files that begin with an underscore character such as `_foo.txt`.
+
 You can pass in `--debug` to print out the CLI stdout and stderr to aid in building or testing scripts.
 
 # Authoring tests
@@ -53,11 +55,13 @@ The following are the built-in commands that are supported:
 - `HTTP_HEADER`: read header from previously fetched HTTP request
 - `HTTP_SET`: set a variable from HTTP header or body
 - `IN`: input received from the CLI (stdout).  can be string (exact match) or regular expression
+- `IN_SET`: set a variable based on input regular expression grouping
 - `IN_SKIP`: skip to output that matches exact string or regular expression
 - `MKDIR`: ensure directory is created and exists
 - `OUT`: output to send the CLI (stdin). must be a string.
 - `PLUGIN`: define a new plugin or plugin directory
 - `RM`: delete file or directory
+- `RUN`: run the CLI command
 - `SET`: set a variable value
 - `SLEEP`: sleep for milliseconds specified
 - `SPAWN`: run without waiting another command
@@ -66,6 +70,7 @@ The following are the built-in commands that are supported:
 - `SPAWN_KILL`: kill a running spawn process
 - `SPAWN_WAIT`: wait for running spawn process to exit before continuing
 - `SYMLINK`: make a symlink. arguments are current working directory, link file/directory and optional name
+- `TEST`: test a value for an exact match or regular expression
 - `TOUCH`: ensure that a file exists
 
 
@@ -97,6 +102,16 @@ OUT:<%=password%>
 
 For a good set of examples, CLIUnit itself is unit tested with itself (recursive?).  Check out the [`test`](https://github.com/appcelerator/cliunit/tree/master/test) directory in this project for various examples.
 
+
+## Breaking up large scripts into smaller units
+
+You can use the keyword `INCLUDE` to include one or more scripts.  The contents of the scripts are loaded as-is in place of the location of the include.  The include command is special and requires no `:` separator like normal commands.
+
+Usage example:
+
+```text
+INCLUDE ./myscript.txt
+```
 
 ## Extending the Script
 

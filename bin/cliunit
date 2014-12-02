@@ -28,7 +28,8 @@ if (program.args.length) {
 		}
 		else if (fs.statSync(fn).isDirectory()) {
 			fs.readdirSync(fn).filter(function(f){
-				return path.extname(f)==='.txt';
+				// only load .txt and skip ones that start with _
+				return path.extname(f)==='.txt' && path.basename(f).charAt(0)!=='_';
 			}).forEach(function(f){
 				files.push(path.join(fn, f));
 			});

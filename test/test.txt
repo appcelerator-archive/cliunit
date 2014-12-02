@@ -1,0 +1,10 @@
+#
+# Script for testing test
+#
+DESC: should test test
+SET:foo=bar
+TEST:foo=bar
+TEST:foo=/bar/
+TEST:foo=/\w/
+TEST:!foo=foo
+TEST:foo

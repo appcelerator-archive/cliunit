@@ -4,5 +4,6 @@
 DESC: should print out correct error on bad filename
 CMD:../bin/cliunit
 ARG:fppbar
+RUN:
 ERROR:/Couldn't find script:\s(.*)\/fppbar$/
 EXIT:1

@@ -7,4 +7,5 @@ ARG:./fixtures/echo/multiline.txt
 # should come in as newline and then a tab
 IN:foo
 IN:\tbar
+RUN:
 EXIT:0

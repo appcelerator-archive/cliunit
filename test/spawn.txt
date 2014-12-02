@@ -6,4 +6,5 @@ SPAWN:echo, bar
 SPAWN_IN:
 SPAWN_WAIT: 
 IN:bar
+RUN:
 EXIT:0

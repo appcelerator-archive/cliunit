@@ -11,4 +11,5 @@ IN:    -V, --version        output the version number
 IN:    --debug              print debug output
 IN:    --config <config>    pass configuration into script as key=value
 IN:    --timeout <timeout>  timeout in ms before test should be aborted
+RUN:
 EXIT:0

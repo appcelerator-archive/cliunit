@@ -8,7 +8,7 @@ describe("colors", function(){
 		unit.setBinary(path.join(__dirname,'../bin/cliunit'));
 		unit.setArguments(['--debug', '--colors', 'true', path.join(__dirname,'version.txt')]);
 		unit.addExpect('STDOUT: '+pkg.version);
-		unit.addExpect(/\[32m✔\s+\[39m\[33mtest\/version\.txt\s+\[39m\[90m\s\(\dms\)\s+\[39m\s+\[36mshould print out current version\[39m/);
+		unit.addExpect(/\[32m✔\s+\[39m\[33mtest\/version\.txt\s+\[39m\[90m\s\(\d+ms\)\s+\[39m\s+\[36mshould print out current version\[39m/);
 
 		function error(err) {
 			done && done(err);
@@ -27,7 +27,7 @@ describe("colors", function(){
 		unit.setBinary(path.join(__dirname,'../bin/cliunit'));
 		unit.setArguments(['--debug', '--colors', 'false', path.join(__dirname,'version.txt')]);
 		unit.addExpect('STDOUT: '+pkg.version);
-		unit.addExpect(/\✔\s+test\/version\.txt\s+\s\(\dms\)\s+should print out current version/);
+		unit.addExpect(/\✔\s+test\/version\.txt\s+\s\(\d+ms\)\s+should print out current version/);
 
 		function error(err) {
 			done && done(err);

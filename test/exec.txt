@@ -7,4 +7,5 @@ ARG:--debug
 ARG:./version.txt
 IN:/^STDOUT: \d\.\d\.\d$/
 EXEC:echo hello
+RUN:
 EXIT:0

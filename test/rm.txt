@@ -16,4 +16,3 @@ FILE:./foobarfile.txt
 RM:./foobarfile.txt
 FILE:!./foobarfile.txt
 
-EXIT:0

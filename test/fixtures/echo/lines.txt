@@ -1,0 +1,9 @@
+#
+# Script for testing lines output
+#
+DESC: should print 5 lines
+ECHO:line00
+ECHO:line10
+ECHO:line20
+ECHO:line30
+ECHO:line40

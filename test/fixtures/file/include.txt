@@ -1,7 +1,6 @@
+# Script for testing include
 #
-# Script for testing set
-#
-DESC: should test set
+DESC: should test include
 CMD:../bin/cliunit
 ARG:./fixtures/echo/set.txt
 IN:bar

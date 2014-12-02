@@ -5,4 +5,5 @@ DESC: should print out current version
 CMD:../bin/cliunit
 ARG:--version
 IN:/\d\.\d\.\d/
+RUN:
 EXIT:0

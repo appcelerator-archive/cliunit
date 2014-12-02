@@ -4,4 +4,5 @@
 DESC: should be OK with a good script filename
 CMD:../bin/cliunit
 ARG:./fixtures/test.txt
+RUN:
 EXIT:0

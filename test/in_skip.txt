@@ -1,0 +1,15 @@
+#
+# Script for testing in_set
+#
+DESC: should test in_set
+CMD:../bin/cliunit
+ARG:./fixtures/echo/lines.txt
+RUN:
+# exact match
+IN_SKIP:line10
+# regular expression
+IN_SKIP:/line20/
+# regular expression with group, setting a variable from the match group
+IN_SKIP:/line(3\d)/,foo
+TEST:foo=30
+EXIT:0

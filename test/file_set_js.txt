@@ -14,5 +14,5 @@ ARG:foo=<%=key.foo%>
 ARG:--debug
 IN:STDOUT: bar
 
-
+RUN:
 EXIT:0

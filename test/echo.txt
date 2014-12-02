@@ -5,4 +5,5 @@ DESC: should test printing out to console
 CMD:../bin/cliunit
 ARG:./fixtures/echo/echo.txt
 IN:foo
+RUN:
 EXIT:0

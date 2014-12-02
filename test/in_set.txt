@@ -1,0 +1,10 @@
+#
+# Script for testing in_set
+#
+DESC: should test in_set
+CMD:../bin/cliunit
+ARG:./fixtures/echo/set.txt
+RUN:
+IN_SET:foo=/(.*)/
+TEST:foo=bar
+EXIT:0

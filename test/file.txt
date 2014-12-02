@@ -7,4 +7,5 @@ CMD:echo
 FILE:./file.txt
 # make sure it doesn't exist
 FILE:!./fileboooo.txt
+RUN:
 EXIT:0

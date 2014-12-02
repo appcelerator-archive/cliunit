@@ -8,6 +8,7 @@ ARG:--debug
 ARG:--colors
 ARG:true
 IN:/^STDOUT: \d\.\d\.\d$/
-IN:/\[32m✔\s+\[39m\[33mtest\/version\.txt\s+\[39m\[90m\s\(\dms\)\s+\[39m\s+\[36mshould print out current version\[39m/
+IN:/\[32m✔\s+\[39m\[33mtest\/version\.txt\s+\[39m\[90m\s\(\d+ms\)\s+\[39m\s+\[36mshould print out current version\[39m/
 IN:[32m1[39m [32mtest succeeded[39m[32m![39m
+RUN:
 EXIT:0

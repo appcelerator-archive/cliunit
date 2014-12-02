@@ -17,8 +17,13 @@ HTTP_HEADER:x-frame-options=SAMEORIGIN
 # set a HTTP post body
 HTTP_OUT:foo=bar
 # perform a post with body
-HTTP:url=http://httpbin.org/post, method=POST
+HTTP:url=http://posttestserver.com/post.php?dump, method=POST
 HTTP_IN:/foo=bar/
+HTTP_HEADER:content-type
+
+# set value from HTTP body as regular expression group
+HTTP_SET:url=body,/UNIQUE_ID = (.*)/
+TEST:url=/\w+/
 
 # set value from HTTP header
 HTTP_SET:foo=content-type
@@ -29,7 +34,8 @@ ARG:./fixtures/echo/out.txt
 ARG:--config
 ARG:foo=<%=foo%>
 ARG:--debug
-IN:STDOUT: application/json
+IN:STDOUT: text/html
 
 
+RUN:
 EXIT:0

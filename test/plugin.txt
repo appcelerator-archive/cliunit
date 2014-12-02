@@ -8,4 +8,5 @@ ARG:./version.txt
 PLUGIN:./fixtures/plugins/goodplugin.js
 IN:/^STDOUT: \d\.\d\.\d$/
 GOOD:BOY
+RUN:
 EXIT:0

@@ -11,4 +11,5 @@ IN:Test Failure:
 IN:test/fixtures/test.txt
 IN:/timed out after \d ms/
 IN:/0 tests succeeded, 1 test failed/
+RUN:
 EXIT:1

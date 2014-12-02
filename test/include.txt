@@ -1,0 +1,2 @@
+# include test
+INCLUDE ./fixtures/file/include.txt
