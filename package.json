@@ -1,6 +1,6 @@
 {
   "name": "cliunit",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "CLI Unit Testing",
   "main": "index.js",
   "preferGlobal": true,
@@ -33,7 +33,6 @@
     "ps-tree": "0.0.3",
     "request": "^2.49.0",
     "should": "^4.3.0",
-    "stripcc": "^1.0.0",
     "which": "^1.0.7"
   },
   "devDependencies": {
