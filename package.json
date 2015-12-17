@@ -3,6 +3,7 @@
   "version": "1.0.5",
   "description": "CLI Unit Testing",
   "main": "index.js",
+  "private": true,  
   "preferGlobal": true,
   "bin": {
     "cliunit": "./bin/cliunit"
